@@ -1,2 +1,3 @@
-/local_upload.sh
+/local_upload_data.sh
 .DS_Store
+.vscode
