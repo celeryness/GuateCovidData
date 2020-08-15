@@ -1,0 +1,54 @@
+[
+      {
+        "description": "departamento", 
+        "mode": "NULLABLE", 
+        "name": "departamento", 
+        "type": "STRING"
+      },
+      {
+        "description": "municipio", 
+        "mode": "NULLABLE", 
+        "name": "municipio", 
+        "type": "STRING"
+      },
+      {
+        "description": "poblacion", 
+        "name": "poblacion", 
+        "type": "INTEGER"
+      },
+      {
+        "description": "fecha", 
+        "name": "fecha", 
+        "type": "DATE"
+      },
+      {
+        "description": "casos tamizados", 
+        "name": "casos_tamizados", 
+        "type": "INTEGER"
+      },
+      {
+        "description": "alisamiento exponencial de casos tamizados", 
+        "name": "exp_tamizados", 
+        "type": "FLOAT"
+      },
+      {
+        "description": "casos confirmados", 
+        "name": "casos_confirmados", 
+        "type": "INTEGER"
+      },
+      {
+        "description": "alisamiento exponencial de casos confirmados", 
+        "name": "exp_confirmados", 
+        "type": "FLOAT"
+      },
+      {
+        "description": "casos fallecidos", 
+        "name": "casos_fallecidos", 
+        "type": "INTEGER"
+      },
+      {
+        "description": "alisamiento exponencial de casos fallecidos", 
+        "name": "exp_fallecidos", 
+        "type": "FLOAT"
+      }
+  ]
