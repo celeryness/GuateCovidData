@@ -1,3 +1,5 @@
 /local_upload_data.sh
 .DS_Store
 .vscode
+.~lock*
+readme.odt
