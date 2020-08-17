@@ -7,7 +7,7 @@
 
 Un script PHP para convertir los archivos de formato CSV producido diariamente por el Ministerio de Salud en Guatemala (MSPAS) (https://tablerocovid.mspas.gob.gt/) al formato NDJSON en la forma de una tabla integrada para subir a servicios como Google BigQuery o Amazon Redshift.
 
-Favor de notar: este script fue escrito en PHP 7.4 y se usa funcionalidad como “variable typing” que solo ha estado disponible desde el PHP 7.4. Entonces, hay que tener PHP 7.4 (o mas) disponible en el terminal/cmd para que este script funciona.
+Favor de notar: este script fue escrito en PHP 7.4 y se usar funcionalidad como “property typing” que solo ha estado disponible desde el PHP 7.4. Entonces, hay que tener PHP 7.4 (o mas) disponible en el terminal/cmd para que este script funciona. PHP extension mbstring tiene que estar habilitado.
 
 ### Uso
 
@@ -25,7 +25,7 @@ El script también entiende un parámetro extra –completo. Por predeterminado 
 
 A PHP utility to convert the CSVs produced daily by the Ministry of Health in Guatemala (MSPAS) (https://tablerocovid.mspas.gob.gt/) to NDJSON format as one integrated table for uploading to services like Google BigQuery or Amazon Redshift.
 
-Please note: this utility was written in PHP 7.4 and uses features such as variable typing that have only been available since PHP 7.4. Therefore you must have PHP 7.4 (or greater) available on the terminal/command line to use this utility.
+Please note: this utility was written in PHP 7.4 and uses features such as property typing that have only been available since PHP 7.4. Therefore you must have PHP 7.4 (or greater) available on the terminal/command line to use this utility. The PHP mbstring extension must be enabled.
 
 ### Usage
 
