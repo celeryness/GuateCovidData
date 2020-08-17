@@ -163,22 +163,25 @@ class GuateCovidData
                     echo "\n[Leyendo el archivo ".substr($casosFallecidosCSV, 0, 45)."...]\n";
                     GuateCovidData::fileDataToArray($diedHandle, $labels, $amalgamated);
                     fclose($diedHandle);        
-                   
-                    echo "\n[Generando el archivo ".$fileOptions->getFileName()."]\n\n";
-                    self::clearOldGeneratedFiiles($fileOptions);
-
-                    foreach ($amalgamated as $key => $dept) 
+                    if (self::checkUploadDirectory())
                     {
-                        foreach($dept as $muni => $valores)
+                   
+                        echo "\n[Generando el archivo ".$fileOptions->getFileName()."]\n\n";
+                        self::clearOldGeneratedFiiles($fileOptions);
+
+                        foreach ($amalgamated as $key => $dept) 
                         {
-                            if ($muni != "departamento")
+                            foreach($dept as $muni => $valores)
                             {
-                                $poblacion = $dept[$muni]["poblacion"];
-                                foreach($dept[$muni]["datos"] as $date => $daily)
+                                if ($muni != "departamento")
                                 {
-                                    $record = ["departamento" => $dept["departamento"], "municipio" => $dept[$muni]["municipio"], "poblacion" => $poblacion]+$daily;
-                                    self::arrayToNDJSON([$record], $fileOptions);
-                                    $poblacion = 0;
+                                    $poblacion = $dept[$muni]["poblacion"];
+                                    foreach($dept[$muni]["datos"] as $date => $daily)
+                                    {
+                                        $record = ["departamento" => $dept["departamento"], "municipio" => $dept[$muni]["municipio"], "poblacion" => $poblacion]+$daily;
+                                        self::arrayToNDJSON([$record], $fileOptions);
+                                        $poblacion = 0;
+                                    }
                                 }
                             }
                         }
@@ -228,6 +231,14 @@ class GuateCovidData
             throw new Exception("El archivo " . $fileName . " parece que no existe.");
         }
         return $handle;
+    }
+    public static function checkUploadDirectory():bool
+    {
+        if (!is_dir("for_upload"))
+        {
+            return mkdir("for_upload");
+        }
+        return true;
     }
     public static function clearOldGeneratedFiiles(FileWriteOptions $fileOptions):void
     {
